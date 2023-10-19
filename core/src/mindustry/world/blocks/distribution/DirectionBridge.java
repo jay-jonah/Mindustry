@@ -148,7 +148,7 @@ public class DirectionBridge extends Block{
         }
         Draw.alpha(Renderer.bridgeOpacity);
 
-        for(float i = 6f; i <= len + size * tilesize - 5f; i += 5f){
+        for(double i = 6f; i <= len + size * tilesize - 5f; i += 5f){
             Draw.rect(arrowRegion, x1 + Geometry.d4x(rotation) * i, y1 + Geometry.d4y(rotation) * i, angle);
         }
 
@@ -186,7 +186,8 @@ public class DirectionBridge extends Block{
             //draw incoming bridges
             for(int dir = 0; dir < 4; dir++){
                 if(dir != rotation){
-                    int dx = Geometry.d4x(dir), dy = Geometry.d4y(dir);
+                    int dx = Geometry.d4x(dir); 
+                    int dy = Geometry.d4y(dir);
                     Building found = occupied[(dir + 2) % 4];
 
                     if(found != null){
